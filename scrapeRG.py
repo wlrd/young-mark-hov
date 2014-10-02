@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import sys
+import itertools
 
 def get_links(artist):
 	#constructs url to scrape from
@@ -27,9 +28,15 @@ def get_lyrics(link):
 	return lyrics	
 
 if __name__ == '__main__':
-	links = get_links(sys.argv[1])
-	lyrics =''
+	artists = ['drake','kanye','lil+wayne','kendrick+lamar','jay+z','2+chainz','sage+the+gemini']
+	lyrics =''	
+	links =[]
 	
+	for artist in artists:
+		links.append(get_links(artist))
+
+	links = list(itertools.chain(*links))
+
 	#store lyrics in a string
 	for link in links:
 		lyrics+=str(get_lyrics(link).encode('utf-8'))
