@@ -7,5 +7,5 @@ To use: Make sure you have flask installed. Execute run.py and then access local
 TO-DO:
 + Create Homepage
 + OAUTH
-+ Scrape Lyrics
++ Scrape Lyrics (DONE)
 + Markov Chains
