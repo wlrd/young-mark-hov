@@ -18,8 +18,21 @@ def get_links(artist):
 	
 	return links
 
+def get_lyrics(link):
+	response = requests.get(link)
+
+	soup = BeautifulSoup(response.text)
+	lyrics = soup.find('div',class_='lyrics').text.strip()
+
+	return lyrics	
+
 if __name__ == '__main__':
 	links = get_links(sys.argv[1])
-
+	lyrics =''
+	
+	#store lyrics in a string
 	for link in links:
-		print link
+		lyrics+=str(get_lyrics(link).encode('utf-8'))
+		
+	with open('lyrics.txt','a') as the_file:
+		the_file.write(lyrics)
