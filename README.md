@@ -8,4 +8,4 @@ TO-DO:
 + Create Homepage
 + OAUTH
 + Scrape Lyrics (DONE)
-+ Markov Chains (CURRENTLY WORKIN ON
++ Markov Chains (CURRENTLY WORKIN ON)
