@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 import itertools
-
+import re
 def get_links(artist):
 	#constructs url to scrape from
 	search_url = 'http://genius.com/search?q=' + str(artist)
@@ -40,6 +40,8 @@ if __name__ == '__main__':
 	#store lyrics in a string
 	for link in links:
 		lyrics+=str(get_lyrics(link).encode('utf-8'))
-		
+
+        lyrics = re.sub(r'(\[.*?\])','',lyrics)
+
 	with open('lyrics.txt','a') as the_file:
 		the_file.write(lyrics)
