@@ -1,11 +1,7 @@
 young-mark-hov
 ===============
-yeezy taught me 
+Generates rap lyrics using Markov Chains. 
 
 To use: Make sure you have flask installed. Execute run.py and then access localhost:5000. ^C to kill the server.
 
-TO-DO:
-+ Create Homepage
-+ OAUTH
-+ Scrape Lyrics (DONE)
-+ Markov Chains (CURRENTLY WORKING ON)
+
